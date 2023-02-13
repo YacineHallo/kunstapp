@@ -1,4 +1,4 @@
-import { PageWrapper } from "../../40-components/pagewrapper/PageWrapper";
+import { PageWrapper } from "../../components/pagewrapper/PageWrapper";
 
 export const HomeView = () => {
   return (

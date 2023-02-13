@@ -29,6 +29,6 @@ export interface ICharacterResult {
   img: string; //is URL
 }
 
-export interface CharacterResultAll{
-  results=ICharacterResult[];
-}
+// export interface CharacterResultAll{
+//   results=ICharacterResult[];
+// }

@@ -1,0 +1,34 @@
+@import "./Variables.scss";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  //this defines what 1 rem is.
+  //1rem is nu 10px (want 100% zou 16px zijn)Echter je kunt dit beter met % doen
+  // Wanneer je font-size=10px doet dan overschrijft dit de fontsize die
+  //een gebruiker wellicht heeft geplaatst omdat deze slechtziend is (stel die heeft m op
+  //default 30px gezet > dan overchijf je deze met 10px. Doe je 100%
+  //dan zal bij deze geberuiker de default font-size 30 px blijven.
+}
+
+body {
+  margin: 0;
+  background-color: $color-neutral-grey-1;
+  font-size: $font-size-default;
+  box-sizing: border-box;
+}
+
+.header,
+.main,
+.footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  min-width: 800px;
+}
