@@ -1,0 +1,60 @@
+//NAVIGATIE
+@import "../../00-constants/scss_basic_var/Variables.scss";
+
+.header__nav {
+  background-color: $color-navigatie-bar;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+.navigation__list,
+.navigation__zoek {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+
+  .navigation__item {
+    padding: 1rem;
+  }
+
+  .navigation__link {
+    text-decoration: none;
+    color: $color-neutral-grey-4;
+    font-size: 1.8rem;
+    font-weight: 700;
+    transition: all 500ms ease;
+
+    &:hover {
+      color: $color-primary-red;
+    }
+
+    &:active {
+      text-decoration: underline;
+      color: $color-primary-black;
+    }
+  }
+}
+
+.navigation__zoek {
+  padding: 1.5rem 10rem 1.5rem 0;
+
+  .navigation__zoek__img {
+    width: 4.4rem;
+    height: 4.4rem;
+
+    &:hover {
+      background-color: #ec0000;
+      background-image: url(https://amsterdam.nl/views/core/images/svg/close-icon-white.svg);
+    }
+  }
+}
+
+.navigation__list {
+  padding: 1.5rem 0 1.5rem 17.5rem;
+}
