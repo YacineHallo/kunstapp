@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navigatie.scss";
+import { ROUTES } from "../../routes/IndexRoutes";
 
 export const Navigatie = () => {
   return (
     <header className="header">
-      <Link to="/">
+      <NavLink to="/">
         <div className="header__logo">
           <img
             src="https://www.amsterdam.nl/views/core/images/logos/andreas.svg"
@@ -18,36 +19,36 @@ export const Navigatie = () => {
             <span className="logotext">Amsterdam</span>
           </span>
         </div>
-      </Link>
+      </NavLink>
       <nav className="header__nav">
         <ul className="navigation__list">
           <li className="navigation__item">
-            <Link to="#" className="navigation__link">
+            <NavLink to="/characters" className="navigation__link">
               Characters
-            </Link>
+            </NavLink>
           </li>
           <li className="navigation__item">
-            <Link to="#" className="navigation__link">
+            <NavLink to="#" className="navigation__link">
               Episodes
-            </Link>
+            </NavLink>
           </li>
           <li className="navigation__item">
-            <Link to="#" className="navigation__link">
+            <NavLink to="#" className="navigation__link">
               Location
-            </Link>
+            </NavLink>
           </li>
           <li className="navigation__item">
-            <Link to="#" className="navigation__link">
+            <NavLink to="#" className="navigation__link">
               contact
-            </Link>
+            </NavLink>
           </li>
         </ul>
 
         <ul className="navigation__zoek">
           <li className="navigation__item">
-            <Link to="#" className="navigation__link">
+            <NavLink to="#" className="navigation__link">
               zoek
-            </Link>
+            </NavLink>
           </li>
           <img
             src="img/search-icon-black.svg"
