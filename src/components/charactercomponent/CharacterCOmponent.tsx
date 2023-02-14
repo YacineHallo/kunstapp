@@ -1,6 +1,7 @@
 import React from "react";
 //import "./CharacterComponent.scss";
 import hart from "./hartje.jpg";
+import "./CharacterComponent.scss";
 import { ICharacter } from "../../types/CharacterTypes";
 
 // export const CharacterComponent = (results: ICharacter) => {
@@ -45,25 +46,31 @@ const CharacterComponent = (results: ICharacter) => {
   const { id, image, name, status, species, gender } = results;
 
   return (
-    <article className="article article1" key={id}>
-      <h3 className="article__header">{name}</h3>
+    <article className="character" key={id}>
+      <h3 className="character__header">{name}</h3>
       <figure className="character-detail__figure">
         <img
           src={image}
-          alt=""
-          className="article__img"
+          alt={`drawing of ${name}`}
+          className="character__img"
           width="250"
           height="200"
         />
-        <figcaption className="article__text">Kunstenaar is {name}</figcaption>
       </figure>
+      <article>
+        <ul>
+          <li className="character-detail__eigenschap">Species: {species}</li>
+          <li className="character-detail__eigenschap">Status: {status}</li>
+          <li className="character-detail__eigenschap">Gender: {gender}</li>
+        </ul>
+      </article>
 
-      <div className="article__footer">
-        <img src={hart} alt="" className="article__footer__img" />
-        <span className="article__footer__kopen">
+      <div className="character__footer">
+        <img src={hart} alt="" className="character__footer__img" />
+        {/* <span className="character__footer__kopen">
           {" "}
-          <span className="article__footer__kopen__plus">+</span> Deze wil ik
-        </span>
+          <span className="character__footer__kopen__plus">+</span>
+        </span> */}
       </div>
     </article>
   );
