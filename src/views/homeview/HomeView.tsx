@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { PageWrapper } from "../../components/pagewrapper/PageWrapper";
 import CharacterComponent from "../../components/charactercomponent/CharacterCOmponent";
+import "../../components/paginationbuttons/PaginationButtons.scss";
 //import { Pagination } from "../../components/paginationComponent/PaginationComponent";
 import { ICharacter, ICharactersResponse } from "../../types/IndexTypes";
 
@@ -8,12 +9,12 @@ export const HomeView = () => {
   const [character, setCharacter] = useState<ICharacter[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [pageNumber, setPageNumber] = useState(1);
-  type prev = number | null;
-  type next = number | null;
+  // type prev = number | null;
+  // type next = number | null;
 
   // eslint-disable-next-line @typescript-eslint/no-redeclare
   let prev = () => {
-    if (pageNumber! < 1) setPageNumber(pageNumber - 1);
+    setPageNumber(pageNumber - 1);
   };
   // eslint-disable-next-line @typescript-eslint/no-redeclare
   let next = () => {
@@ -46,14 +47,17 @@ export const HomeView = () => {
         {character.map((perCharacter: JSX.IntrinsicAttributes & ICharacter) => (
           <CharacterComponent {...perCharacter} key={perCharacter.id} />
         ))}
+        <div className="pagination">
+          {pageNumber > 1 && (
+            <button className="button-pagination" onClick={prev}>
+              Prev
+            </button>
+          )}
 
-        <button onClick={prev} className="button-pagination">
-          Prev
-        </button>
-
-        <button onClick={next} className="button-pagination">
-          Next
-        </button>
+          <button onClick={next} className="button-pagination">
+            Next
+          </button>
+        </div>
       </div>
     </PageWrapper>
   );

@@ -59,6 +59,14 @@
 //     }
 //   }
 // }
+.border {
+  border-bottom: 2px solid $color-neutral-grey-2;
+  border-right: 2px solid $color-neutral-grey-2;
+  :hover {
+    border-bottom: 2px solid $color-primary-red;
+    border-right: 2px solid $color-primary-red;
+  }
+}
 
 .character {
   background-color: $color-neutral-grey-1;
@@ -72,21 +80,30 @@
   &__img {
     padding: $padding-default;
     width: 30rem;
+    pointer-events: none;
   }
   &__header {
     padding: $padding-default;
     text-align: center;
     font-size: $font-size-header;
     color: $color-secundair-magenta;
+    pointer-events: none;
   }
-  &-detail__eigenschap {
-    list-style-type: none;
+  &-detail {
+    pointer-events: none;
+    &__eigenschap {
+      list-style-type: none;
+    }
   }
+
   &__footer {
     position: relative;
+    pointer-events: none;
+
     &__img {
       width: 5rem;
       margin-left: 2rem;
+      pointer-events: none;
     }
     &__kopen {
       text-align: center;

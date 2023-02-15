@@ -46,9 +46,10 @@ const CharacterComponent = (results: ICharacter) => {
   const { id, image, name, status, species, gender } = results;
 
   return (
-    <article className="character" key={id}>
-      <h3 className="character__header">{name}</h3>
-      <figure className="character-detail__figure">
+    <div className="border">
+      <article className="character" key={id}>
+        <h3 className="character__header">{name}</h3>
+
         <img
           src={image}
           alt={`drawing of ${name}`}
@@ -56,23 +57,30 @@ const CharacterComponent = (results: ICharacter) => {
           width="250"
           height="200"
         />
-      </figure>
-      <article>
-        <ul>
-          <li className="character-detail__eigenschap">Species: {species}</li>
-          <li className="character-detail__eigenschap">Status: {status}</li>
-          <li className="character-detail__eigenschap">Gender: {gender}</li>
-        </ul>
-      </article>
 
-      <div className="character__footer">
-        <img src={hart} alt="" className="character__footer__img" />
-        {/* <span className="character__footer__kopen">
+        <article className="character-detail">
+          <ul>
+            <li className="character-detail__eigenschap hover">
+              Species: {species}
+            </li>
+            <li className="character-detail__eigenschap hover">
+              Status: {status}
+            </li>
+            <li className="character-detail__eigenschap hover">
+              Gender: {gender}
+            </li>
+          </ul>
+        </article>
+
+        <div className="character__footer">
+          <img src={hart} alt="" className="character__footer__img" />
+          {/* <span className="character__footer__kopen">
           {" "}
           <span className="character__footer__kopen__plus">+</span>
         </span> */}
-      </div>
-    </article>
+        </div>
+      </article>
+    </div>
   );
 };
 
