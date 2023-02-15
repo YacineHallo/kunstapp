@@ -2,7 +2,7 @@ import React from "react";
 //import "./CharacterComponent.scss";
 import hart from "./hartje.jpg";
 import "./CharacterComponent.scss";
-import { ICharacter } from "../../types/CharacterTypes";
+import { ICharacter } from "../../types/IndexTypes";
 
 // export const CharacterComponent = (results: ICharacter) => {
 //   const { id, image, name, status, species, gender } = results;
