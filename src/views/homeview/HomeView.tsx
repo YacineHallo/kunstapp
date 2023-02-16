@@ -2,24 +2,13 @@ import React, { useEffect, useState } from "react";
 import { PageWrapper } from "../../components/pagewrapper/PageWrapper";
 import CharacterComponent from "../../components/charactercomponent/CharacterCOmponent";
 import "../../components/paginationbuttons/PaginationButtons.scss";
-//import { Pagination } from "../../components/paginationComponent/PaginationComponent";
 import { ICharacter, ICharactersResponse } from "../../types/IndexTypes";
+import { PaginationButtons } from "../../components/paginationbuttons/PaginationButtons";
 
 export const HomeView = () => {
   const [character, setCharacter] = useState<ICharacter[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [pageNumber, setPageNumber] = useState(1);
-  // type prev = number | null;
-  // type next = number | null;
-
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-  let prev = () => {
-    setPageNumber(pageNumber - 1);
-  };
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-  let next = () => {
-    setPageNumber(pageNumber + 1);
-  };
 
   const getCharacters = async (newPage?: number) => {
     setLoading(true);
@@ -40,25 +29,22 @@ export const HomeView = () => {
   useEffect(() => {
     getCharacters(pageNumber);
   }, [pageNumber]);
-
   return (
-    <PageWrapper isLoading={loading}>
-      <div className="container__main">
-        {character.map((perCharacter: JSX.IntrinsicAttributes & ICharacter) => (
-          <CharacterComponent {...perCharacter} key={perCharacter.id} />
-        ))}
-        <div className="pagination">
-          {pageNumber > 1 && (
-            <button className="button-pagination" onClick={prev}>
-              Prev
-            </button>
-          )}
-
-          <button onClick={next} className="button-pagination">
-            Next
-          </button>
+    <>
+      <PageWrapper isLoading={loading}>
+        <div className="container__main">
+          {character.map(
+            (perCharacter: JSX.IntrinsicAttributes & ICharacter) => (
+              <CharacterComponent {...perCharacter} key={perCharacter.id} />
+            )
+          )}{" "}
         </div>
-      </div>
-    </PageWrapper>
+      </PageWrapper>
+
+      <PaginationButtons
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
+    </>
   );
 };
