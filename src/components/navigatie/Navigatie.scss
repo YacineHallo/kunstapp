@@ -1,5 +1,44 @@
 //NAVIGATIE
 @import "../../constants/scss_basic_var/Variables.scss";
+@import "../../constants/scss_basic_var/Basics.scss";
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $color-primary-white;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  position: sticky; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; // detail width
+  z-index: 99;
+
+  //logo
+  &__logo {
+    width: 20rem;
+    padding-bottom: 2rem;
+    padding-left: 10rem;
+
+    .logo__img {
+      height: 6.8rem;
+      padding-left: 2rem;
+    }
+
+    .logotexts {
+      display: inline-block;
+      position: absolute;
+
+      .logotext {
+        display: block;
+        color: red;
+        font-size: $font-size-logo;
+        font-weight: bolder;
+        padding-left: 3rem;
+      }
+    }
+  }
+}
 
 .header__nav {
   background-color: $color-navigatie-bar;

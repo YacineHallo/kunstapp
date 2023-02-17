@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { PageWrapper } from "../../components/pagewrapper/PageWrapper";
 import CharacterComponent from "../../components/charactercomponent/CharacterCOmponent";
-import "../../components/paginationbuttons/PaginationButtons.scss";
 import { ICharacter, ICharactersResponse } from "../../types/IndexTypes";
 import { PaginationButtons } from "../../components/paginationbuttons/PaginationButtons";
 
@@ -32,13 +31,9 @@ export const HomeView = () => {
   return (
     <>
       <PageWrapper isLoading={loading}>
-        <div className="container__main">
-          {character.map(
-            (perCharacter: JSX.IntrinsicAttributes & ICharacter) => (
-              <CharacterComponent {...perCharacter} key={perCharacter.id} />
-            )
-          )}{" "}
-        </div>
+        {character.map((perCharacter: JSX.IntrinsicAttributes & ICharacter) => (
+          <CharacterComponent {...perCharacter} key={perCharacter.id} />
+        ))}{" "}
       </PageWrapper>
 
       <PaginationButtons
