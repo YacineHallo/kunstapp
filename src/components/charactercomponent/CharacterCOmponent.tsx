@@ -1,7 +1,7 @@
-import React from "react";
+import { useState } from "react";
 //import "./CharacterComponent.scss";
 import hart from "./hartje.jpg";
-import "./CharacterComponent.scss";
+import "../../App.scss";
 import { ICharacter } from "../../types/IndexTypes";
 
 // export const CharacterComponent = (results: ICharacter) => {
@@ -44,6 +44,15 @@ import { ICharacter } from "../../types/IndexTypes";
 
 const CharacterComponent = (results: ICharacter) => {
   const { id, image, name, status, species, gender } = results;
+  const [hover, setHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(false);
+  };
 
   return (
     <div className="border">
@@ -63,7 +72,17 @@ const CharacterComponent = (results: ICharacter) => {
             <li className="character-detail__eigenschap hover">
               Species: {species}
             </li>
-            <li className="character-detail__eigenschap hover">
+            <li
+              className="character-detail__eigenschap hover"
+              style={{
+                height: "10px",
+                width: "100px",
+                backgroundColor: hover ? "yellow" : "none",
+                color: hover ? "red" : "black"
+              }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               Status: {status}
             </li>
             <li className="character-detail__eigenschap hover">

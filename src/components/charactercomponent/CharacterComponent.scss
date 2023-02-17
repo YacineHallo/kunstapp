@@ -66,61 +66,65 @@
     border-bottom: 2px solid $color-primary-red;
     border-right: 2px solid $color-primary-red;
   }
-}
 
-.character {
-  background-color: $color-neutral-grey-1;
+  .character {
+    background-color: $color-neutral-grey-1;
 
-  &__text {
-    text-align: center;
-    text-decoration: dotted;
-    font-size: $font-size-header;
-  }
-
-  &__img {
-    padding: $padding-default;
-    width: 30rem;
-    pointer-events: none;
-  }
-  &__header {
-    padding: $padding-default;
-    text-align: center;
-    font-size: $font-size-header;
-    color: $color-secundair-magenta;
-    pointer-events: none;
-  }
-  &-detail {
-    pointer-events: none;
-    &__eigenschap {
-      list-style-type: none;
+    &__text {
+      text-align: center;
+      text-decoration: dotted;
+      font-size: $font-size-header;
     }
-  }
-
-  &__footer {
-    position: relative;
-    pointer-events: none;
 
     &__img {
-      width: 5rem;
-      margin-left: 2rem;
+      padding: $padding-default;
+      width: 30rem;
       pointer-events: none;
     }
-    &__kopen {
+    &__header {
+      padding: $padding-default;
       text-align: center;
-      padding: 1.5rem;
-      width: 10rem;
-      height: 5rem;
-      background-color: $color-dark-blue;
-      position: absolute;
-      margin-left: 2rem;
-      color: $color-primary-white;
-      &__plus {
-        font-weight: bolder;
-        font-size: 4rem;
-        padding-right: 1rem;
+      font-size: $font-size-header;
+      color: $color-secundair-magenta;
+      pointer-events: none;
+    }
+    &-detail {
+      pointer-events: none;
+      &__eigenschap {
+        list-style-type: none;
+        :hover {
+          text-decoration: underline !important;
+          text-decoration-color: #df5689;
+        }
+      }
+    }
+
+    &__footer {
+      position: relative;
+      pointer-events: none;
+
+      &__img {
+        width: 5rem;
+        margin-left: 2rem;
+        pointer-events: none;
+      }
+      &__kopen {
+        text-align: center;
+        padding: 1.5rem;
+        width: 10rem;
+        height: 5rem;
+        background-color: $color-dark-blue;
         position: absolute;
-        top: 0rem;
-        left: 1.5rem;
+        margin-left: 2rem;
+        color: $color-primary-white;
+        &__plus {
+          font-weight: bolder;
+          font-size: 4rem;
+          padding-right: 1rem;
+          position: absolute;
+          top: 0rem;
+          left: 1.5rem;
+        }
       }
     }
   }

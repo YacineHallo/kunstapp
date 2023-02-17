@@ -1,6 +1,6 @@
 //Deze moet rond iedere view
 import React from "react";
-import "./PageWrapper.scss";
+import "../../App.scss";
 
 interface IPageWrapperProps {
   children: React.ReactNode;
@@ -9,10 +9,8 @@ interface IPageWrapperProps {
 
 export const PageWrapper = ({ isLoading, children }: IPageWrapperProps) => {
   return (
-    <div className="page-wrapper">
-      <div className="container__main">
-        {isLoading ? <p>...loading</p> : children}
-      </div>
+    <div className="container__main">
+      {isLoading ? <p>...loading</p> : children}
     </div>
   );
 };
