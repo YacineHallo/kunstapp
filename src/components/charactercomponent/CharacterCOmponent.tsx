@@ -3,6 +3,7 @@ import { useState } from "react";
 import hart from "./hartje.jpg";
 import "../../App.scss";
 import { ICharacter } from "../../types/IndexTypes";
+import { Link, useNavigate } from "react-router-dom";
 
 // export const CharacterComponent = (results: ICharacter) => {
 //   const { id, image, name, status, species, gender } = results;
@@ -45,6 +46,7 @@ import { ICharacter } from "../../types/IndexTypes";
 const CharacterComponent = (results: ICharacter) => {
   const { id, image, name, status, species, gender } = results;
   const [hover, setHover] = useState(false);
+  const navigate = useNavigate();
 
   const handleMouseEnter = () => {
     setHover(true);
@@ -55,7 +57,7 @@ const CharacterComponent = (results: ICharacter) => {
   };
 
   return (
-    <div className="border">
+    <div className="border" onClick={() => navigate(`/characters/${id}`)}>
       <article className="character" key={id}>
         <h3 className="character__header">{name}</h3>
 
