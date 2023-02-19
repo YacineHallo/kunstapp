@@ -13,7 +13,21 @@ function App() {
       <Navigatie />
       <Routes>
         <Route element={<HomeView />} path="/" />
-        <Route element={<CharacterDetail />} path="/characters/:id" />
+        <Route
+          element={
+            <CharacterDetail
+              id={""}
+              name={""}
+              status={""}
+              species={""}
+              type={""}
+              gender={""}
+              image={""}
+              episode={[]}
+            />
+          }
+          path="/characters/:id"
+        />
       </Routes>
     </div>
   );

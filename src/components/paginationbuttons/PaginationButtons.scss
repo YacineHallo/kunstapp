@@ -1,10 +1,13 @@
 @import "../../constants/scss_basic_var/Variables.scss";
 
 .pagination {
+  min-width: 82rem;
+  max-width: 140rem;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
-  background-color: aqua;
+  background-color: $color-primary-white;
+  margin: auto;
 }
 
 .button-pagination {
@@ -20,4 +23,5 @@
   font-size: $font-size-logo;
 
   padding: 1.2rem 1.4rem;
+  margin: 1rem 5rem;
 }
