@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../../App.scss";
-import { ROUTES } from "../../routes/IndexRoutes";
 
 export const Navigatie = () => {
   return (
