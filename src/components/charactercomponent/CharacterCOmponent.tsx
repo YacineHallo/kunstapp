@@ -1,9 +1,8 @@
-import { useState } from "react";
 //import "./CharacterComponent.scss";
 import hart from "./hartje.jpg";
 import "../../App.scss";
 import { ICharacter } from "../../types/IndexTypes";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // export const CharacterComponent = (results: ICharacter) => {
 //   const { id, image, name, status, species, gender } = results;
@@ -45,16 +44,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const CharacterComponent = (results: ICharacter) => {
   const { id, image, name, status, species, gender } = results;
-  const [hover, setHover] = useState(false);
   const navigate = useNavigate();
-
-  const handleMouseEnter = () => {
-    setHover(true);
-  };
-
-  const handleMouseLeave = () => {
-    setHover(false);
-  };
 
   return (
     <div className="border" onClick={() => navigate(`/characters/${id}`)}>
@@ -74,17 +64,7 @@ const CharacterComponent = (results: ICharacter) => {
             <li className="character-detail__eigenschap hover">
               Species: {species}
             </li>
-            <li
-              className="character-detail__eigenschap hover"
-              style={{
-                height: "10px",
-                width: "100px",
-                backgroundColor: hover ? "yellow" : "none",
-                color: hover ? "red" : "black"
-              }}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
+            <li className="character-detail__eigenschap hover">
               Status: {status}
             </li>
             <li className="character-detail__eigenschap hover">

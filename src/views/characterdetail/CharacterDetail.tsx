@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { PageWrapper } from "../../components/pagewrapper/PageWrapper";
 
 export const CharacterDetail = (results: ICharacter) => {
-  let { id, image, name, status, species, gender } = useParams();
+  let { id } = useParams();
   const [loading, setLoading] = useState<boolean>(true);
-  const [character, setCharacter] = useState<ICharacter[]>([]);
+  const [character, setCharacter] = useState<ICharacter>();
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getCharacter = async () => {
@@ -14,10 +14,10 @@ export const CharacterDetail = (results: ICharacter) => {
     try {
       const api = `https://rickandmortyapi.com/api/character/${id}`;
       const res = await fetch(`${api}`);
-      const resJson: ICharactersResponse = await res.json();
+      const resJson: ICharacter = await res.json();
       console.log("res ", resJson);
-      //@ts-ignore
-      setCharacter(resJson.results);
+
+      setCharacter(resJson);
     } catch (e) {
       console.log("oeps   ", e);
     } finally {
@@ -27,18 +27,20 @@ export const CharacterDetail = (results: ICharacter) => {
 
   useEffect(() => {
     getCharacter();
-  }, [getCharacter]);
+  }, []);
   return (
     <>
       <PageWrapper isLoading={loading}>
         <h1>Hallo {id}</h1>
-        <ul>
-          <li>{image}</li>
-          <li>{name}</li>
-          <li>{status}</li>
-          <li>{species}</li>
-          <li>{gender}</li>
-        </ul>
+        {character && (
+          <ul>
+            <li>{character.image}</li>
+            <li>{character.name}</li>
+            <li>{character.status}</li>
+            <li>{character.species}</li>
+            <li>{character.gender}</li>
+          </ul>
+        )}
       </PageWrapper>
       ;
     </>

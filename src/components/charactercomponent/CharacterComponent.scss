@@ -62,7 +62,7 @@
 .border {
   border-bottom: 2px solid $color-neutral-grey-2;
   border-right: 2px solid $color-neutral-grey-2;
-  :hover {
+  &:hover {
     border-bottom: 2px solid $color-primary-red;
     border-right: 2px solid $color-primary-red;
     cursor: pointer;
@@ -80,34 +80,33 @@
     &__img {
       padding: $padding-default;
       width: 30rem;
-      pointer-events: none;
+      //pointer-events: none;
     }
     &__header {
       padding: $padding-default;
       text-align: center;
       font-size: $font-size-header;
       color: $color-secundair-magenta;
-      pointer-events: none;
+      //pointer-events: none;
     }
     &-detail {
-      pointer-events: none;
+      list-style-type: none;
+      :hover {
+        text-decoration: underline;
+        text-decoration-color: $color-primary-black;
+        list-style-type: none;
+      }
       &__eigenschap {
         list-style-type: none;
-        :hover {
-          text-decoration: underline !important;
-          text-decoration-color: #df5689;
-        }
       }
     }
 
     &__footer {
       position: relative;
-      pointer-events: none;
 
       &__img {
         width: 5rem;
         margin-left: 2rem;
-        pointer-events: none;
       }
       &__kopen {
         text-align: center;
