@@ -1,4 +1,6 @@
-import { ICharacter, ICharactersResponse } from "../../types/IndexTypes";
+//opmerking
+
+import { ICharacter } from "../../types/IndexTypes";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { PageWrapper } from "../../components/pagewrapper/PageWrapper";
