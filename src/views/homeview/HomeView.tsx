@@ -12,7 +12,7 @@ export const HomeView = () => {
   const getCharacters = async (newPage?: number) => {
     setLoading(true);
     try {
-      const api = process.env.REACT_APP_API_URL;
+      const api = process.env.REACT_APP_API_URL; //deze .env plaats je in de mappenstructuur op rootniveau
       const res = await await fetch(`${api}/?page=${newPage}`);
       const resJson: ICharactersResponse = await res.json();
       console.log("res ", resJson);
