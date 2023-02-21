@@ -12,8 +12,8 @@ export const HomeView = () => {
   const getCharacters = async (newPage?: number) => {
     setLoading(true);
     try {
-      const api = `https://rickandmortyapi.com/api/character/?page=${newPage}`;
-      const res = await await fetch(`${api}`);
+      const api = process.env.REACT_APP_API_URL;
+      const res = await await fetch(`${api}/?page=${newPage}`);
       const resJson: ICharactersResponse = await res.json();
       console.log("res ", resJson);
       //@ts-ignore
