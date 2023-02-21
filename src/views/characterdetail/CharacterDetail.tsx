@@ -14,8 +14,8 @@ export const CharacterDetail = (results: ICharacter) => {
   const getCharacter = async () => {
     setLoading(true);
     try {
-      const api = `https://rickandmortyapi.com/api/character/${id}`;
-      const res = await fetch(`${api}`);
+      const api = process.env.REACT_APP_API_URL; //deze .env plaats je in de mappenstructuur op rootniveau
+      const res = await fetch(`${api}/${id}`);
       const resJson: ICharacter = await res.json();
       console.log("res ", resJson);
 
