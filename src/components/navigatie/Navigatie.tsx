@@ -50,9 +50,9 @@ export const Navigatie = () => {
             </NavLink>
           </li>
           <img
-            src="img/search-icon-black.svg"
+            src="https://www.amsterdam.nl/views/core/images/svg/search-icon-black.svg"
             className="navigation__zoek__img"
-            alt="Logo van de gemeente amsterdam"
+            alt="Zoek knop"
           />
         </ul>
       </nav>
